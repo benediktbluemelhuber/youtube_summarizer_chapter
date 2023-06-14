@@ -7,12 +7,12 @@ def youtube_to_audio(url, output_path, filename_template="youtube_video"):
     ydl_opts = {
         "outtmpl": f"{output_path}/{filename_template}",
         "format": "m4a/bestaudio/best",
-        "postprocessors": [
-            {  # Extract audio using ffmpeg
-                "key": "FFmpegExtractAudio",
-                "preferredcodec": "m4a",
-            }
-        ],
+#         "postprocessors": [
+#             {  # Extract audio using ffmpeg
+#                 "key": "FFmpegExtractAudio",
+#                 "preferredcodec": "m4a",
+#             }
+#         ],
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
